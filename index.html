@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversario, Mary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff99cc, #ffccff);
+            animation: gradientAnimation 15s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(45deg, #ff99cc, #ffccff); }
+            25% { background: linear-gradient(45deg, #ffb3d9, #ff66cc); }
+            50% { background: linear-gradient(45deg, #ff80cc, #ff3399); }
+            75% { background: linear-gradient(45deg, #ff4d94, #ff1a66); }
+            100% { background: linear-gradient(45deg, #ff99cc, #ffccff); }
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff66b2;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: bounceIn 2s ease-in-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .heart {
+            font-size: 4em;
+            color: #ff6699;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff66b2;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #ff3385;
+            transform: scale(1.1);
+        }
+
+        .message-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .show-message {
+            display: block;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            .heart {
+                font-size: 3.5em;
+            }
+
+            .button {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .heart {
+                font-size: 3em;
+            }
+
+            .button {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Aniversario, Mary ❤️</h1>
+        <p>Han pasado dos meses maravillosos desde que comenzamos esta increíble aventura juntos.</p>
+        <p>Gracias por cada momento, por tu amor, tu risa y por hacerme sentir especial cada día.</p>
+        <div class="heart">💖</div>
+        <p>Te amo más de lo que las palabras pueden expresar.</p>
+        <!-- Botón para reproducir la música -->
+        <button class="button" onclick="playAudio()">Escuchar nuestra canción</button>
+
+        <audio id="audioPlayer" style="display:none;">
+            <source src="file:///D:/pag/dos/dos%20meses.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <!-- Mensaje interactivo que aparecerá cuando el usuario haga clic en el botón -->
+        <div class="message-box" id="messageBox">
+            <p>¡Gracias por ser la mejor! Estoy muy feliz de tenerte en mi vida. 💖</p>
+        </div>
+
+        <!-- Botón para mostrar el mensaje personalizado -->
+        <button class="button" onclick="showMessage()">Ver mensaje especial</button>
+    </div>
+
+    <script>
+        // Función para reproducir la música
+        function playAudio() {
+            var audio = document.getElementById('audioPlayer');
+            audio.play();
+        }
+
+        // Función para mostrar el mensaje personalizado
+        function showMessage() {
+            var messageBox = document.getElementById('messageBox');
+            messageBox.classList.toggle('show-message');
+        }
+    </script>
+</body>
+</html>
